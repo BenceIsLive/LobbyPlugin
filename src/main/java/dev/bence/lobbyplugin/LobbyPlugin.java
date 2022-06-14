@@ -2,11 +2,11 @@ package dev.bence.lobbyplugin;
 
 import dev.bence.lobbyplugin.commands.ReloadCommand;
 import dev.bence.lobbyplugin.listeners.*;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public final class LobbyPlugin extends JavaPlugin {
@@ -19,6 +19,7 @@ public final class LobbyPlugin extends JavaPlugin {
         System.out.println(ChatColor.GREEN + "Plugin enabled");
         instance = this;
 
+
 //        COMMANDS
         getCommand("reload").setExecutor(new ReloadCommand());
 
@@ -29,6 +30,7 @@ public final class LobbyPlugin extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new HideListener(), this);
         this.getServer().getPluginManager().registerEvents(new ItemDropListener(), this);
         this.getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
+        this.getServer().getPluginManager().registerEvents(new SelectorListener(), this);
 
 
 //        CONFIG

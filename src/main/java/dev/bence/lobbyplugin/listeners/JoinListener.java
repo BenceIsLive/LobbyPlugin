@@ -2,6 +2,7 @@ package dev.bence.lobbyplugin.listeners;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
 import dev.bence.lobbyplugin.utils.ChatUtils;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,7 +23,7 @@ public class JoinListener implements Listener {
 
         player.getInventory().clear();
 
-        String joinMessageOld = ChatUtils.format(main.getConfig().getString("join-message"));
+        String joinMessageOld = PlaceholderAPI.setPlaceholders(player,ChatUtils.format(main.getConfig().getString("join-message")));
         String joinMessage = joinMessageOld.replaceAll("%player%", player.getDisplayName());
 
         e.setJoinMessage(joinMessage);

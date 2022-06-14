@@ -2,6 +2,7 @@ package dev.bence.lobbyplugin.listeners;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
 import dev.bence.lobbyplugin.utils.ChatUtils;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,7 +17,7 @@ public class QuitListener implements Listener {
 
         Player player = e.getPlayer();
 
-        String leaveMessageOld = ChatUtils.format(main.getConfig().getString("leave-message"));
+        String leaveMessageOld = PlaceholderAPI.setPlaceholders(player,ChatUtils.format(main.getConfig().getString("leave-message")));
         String leaveMessage = leaveMessageOld.replaceAll("%player%", player.getDisplayName());
 
         e.setQuitMessage(leaveMessage);

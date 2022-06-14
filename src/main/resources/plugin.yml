@@ -3,6 +3,8 @@ version: '${project.version}'
 main: dev.bence.lobbyplugin.LobbyPlugin
 api-version: 1.18
 
+depend: [PlaceholderAPI]
+
 commands:
   reload:
     description: Reloads the config

@@ -1,13 +1,32 @@
-# LobbyPlugin made by Bence
-
-
-# Join/Leave Message
+# LobbyPlugin made by 7Bence
 
 prefix: "&#1dfb83&lM&#24fb8e&lA&#2bfc99&lZ&#32fca3&lE&#39fdae&lM&#40fdb9&lC &8&l| &7"
 
-join-message: "&a+ %player%"
-leave-message: "&c- %player%"
+# Join/Leave Message
+
+join-message: "&a+ &7%player%"
+leave-message: "&c- &7%player%"
+
+# Join item
 
 join-item:
   material: 'COMPASS'
   amount: '1'
+
+# GUI Menu server selector
+
+server-selector:
+  title: "          &a&lServer Selector"
+  name: "&#1dfb83&lSurvival"
+  item: 'GRASS_BLOCK'
+  glow: 'true'
+  lore:
+    - ''
+    - '&f- &7Gegarandeerd geen lagg'
+    - '&f- &7Volledig 1.18.x'
+    - '&f- &7Vriendelijke spelers!'
+    - '&f- &7Elke week meerdere events!'
+    - ''
+    - '&f- &7Spelers: &a%bungee_survival%'
+    - ''
+    - '&a&l➜ &aKlik om te verbinden!'
