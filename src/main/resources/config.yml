@@ -1,0 +1,13 @@
+# LobbyPlugin made by Bence
+
+
+# Join/Leave Message
+
+prefix: "&#1dfb83&lM&#24fb8e&lA&#2bfc99&lZ&#32fca3&lE&#39fdae&lM&#40fdb9&lC &8&l| &7"
+
+join-message: "&a+ %player%"
+leave-message: "&c- %player%"
+
+join-item:
+  material: 'COMPASS'
+  amount: '1'

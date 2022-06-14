@@ -1,0 +1,8 @@
+name: LobbyPlugin
+version: '${project.version}'
+main: dev.bence.lobbyplugin.LobbyPlugin
+api-version: 1.18
+
+commands:
+  reload:
+    description: Reloads the config
