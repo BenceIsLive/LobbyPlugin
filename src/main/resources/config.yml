@@ -30,3 +30,7 @@ server-selector:
     - '&f- &7Spelers: &a%bungee_survival%'
     - ''
     - '&a&l➜ &aKlik om te verbinden!'
+
+# Double jump true/false
+
+double-jump: false

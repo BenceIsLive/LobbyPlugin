@@ -31,6 +31,7 @@ public final class LobbyPlugin extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new ItemDropListener(), this);
         this.getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
         this.getServer().getPluginManager().registerEvents(new SelectorListener(), this);
+        this.getServer().getPluginManager().registerEvents(new DoubleJumpListener(), this);
 
 
 //        CONFIG
