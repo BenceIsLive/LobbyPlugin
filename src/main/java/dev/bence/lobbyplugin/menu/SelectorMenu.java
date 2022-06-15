@@ -1,4 +1,4 @@
-package dev.bence.lobbyplugin.Menu;
+package dev.bence.lobbyplugin.menu;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
 import dev.bence.lobbyplugin.libaries.ItemBuilder;

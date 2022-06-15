@@ -1,7 +1,7 @@
 package dev.bence.lobbyplugin.listeners;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
-import dev.bence.lobbyplugin.Menu.SelectorMenu;
+import dev.bence.lobbyplugin.menu.SelectorMenu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

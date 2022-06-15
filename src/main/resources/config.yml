@@ -34,3 +34,21 @@ server-selector:
 # Double jump true/false
 
 double-jump: false
+
+# Scoreboard
+
+scoreboard:
+  title: '&#1dfb83&lM&#24fb8e&lA&#2bfc99&lZ&#32fca3&lE&#39fdae&lM&#40fdb9&lC'
+  lines:
+    - '     &7%server_time_d MMMMM yyyy%'
+    - ' &r'
+    - ' &fRank: &cEigenaar'
+    - '  &r'
+    - ' &7&oGebruik de server'
+    - ' &7&oselector om naar'
+    - ' &7&oeen server te gaan.'
+    - '   &r'
+    - ' &fLobby: &a%bungee_lobby%'
+    - ' &fSurvival: &a%bungee_season3%'
+    - '&r'
+    - '&7play.trophicmc.nl'
