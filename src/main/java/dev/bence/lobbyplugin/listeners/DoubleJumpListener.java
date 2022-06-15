@@ -21,7 +21,7 @@ public class DoubleJumpListener implements Listener {
         Player p = e.getPlayer();
 
 
-        if (main.getConfig().getBoolean("double-jump") == true)
+        if (main.getConfig().getBoolean("double-jump")) {
             if (p.getGameMode() != GameMode.CREATIVE) {
                 e.setCancelled(true);
                 p.setAllowFlight(false);
@@ -29,6 +29,7 @@ public class DoubleJumpListener implements Listener {
                 p.setVelocity(p.getLocation().getDirection().multiply(2.0D).setY(0.9D));
                 p.playEffect(p.getLocation(), Effect.BLAZE_SHOOT, 15);
             }
+        }
     }
 
 
@@ -36,10 +37,14 @@ public class DoubleJumpListener implements Listener {
     public void onPlayerMove(PlayerMoveEvent e) {
         Player p = e.getPlayer();
 
-        if (main.getConfig().getBoolean("double-jump") == true)
+        if (main.getConfig().getBoolean("double-jump")) {
             if ((e.getPlayer().getGameMode() != GameMode.CREATIVE)
                     && (p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() != Material.AIR)) {
                 p.setAllowFlight(true);
             }
+
+        } else {
+            p.setAllowFlight(false);
         }
     }
+}
