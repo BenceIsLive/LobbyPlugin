@@ -45,6 +45,7 @@ public class DoubleJumpListener implements Listener {
 
         } else {
             p.setAllowFlight(false);
+
         }
     }
 }

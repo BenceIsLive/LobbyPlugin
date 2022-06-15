@@ -3,12 +3,15 @@ package dev.bence.lobbyplugin.listeners;
 import dev.bence.lobbyplugin.LobbyPlugin;
 import dev.bence.lobbyplugin.utils.ChatUtils;
 import me.clip.placeholderapi.PlaceholderAPI;
-import org.bukkit.Material;
+import org.bukkit.*;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class JoinListener implements Listener {
@@ -27,6 +30,20 @@ public class JoinListener implements Listener {
         String joinMessage = joinMessageOld.replaceAll("%player%", player.getDisplayName());
 
         e.setJoinMessage(joinMessage);
+
+        Firework fireWork = (Firework) e.getPlayer().getWorld().spawnEntity(player.getLocation(), EntityType.FIREWORK);
+        FireworkMeta fwMeta = fireWork.getFireworkMeta();
+
+        fwMeta.addEffect(FireworkEffect.builder()
+                .flicker(false)
+                .trail(true)
+                .with(FireworkEffect.Type.STAR)
+                .withColor(Color.BLUE)
+                .withColor(Color.WHITE)
+                .withFade(Color.RED)
+                .build());
+        fireWork.setFireworkMeta(fwMeta);
+
 
         ItemStack joinItem = new ItemStack(Material.getMaterial(main.getConfig().getString("join-item.material")), 1);
         ItemStack lime = new ItemStack(Material.LIME_DYE, 1);
