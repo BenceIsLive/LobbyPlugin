@@ -22,6 +22,8 @@ public class SelectorListener implements Listener {
 
                 new SelectorMenu(player);
             }
+
+
         }
     }
 }
