@@ -9,6 +9,9 @@ leave-message: "&c- &7%player%"
 
 # Join item
 
+particle-menu: true
+particle-menu-title: "&aParticle Menu"
+
 join-item:
   material: 'COMPASS'
   amount: '1'

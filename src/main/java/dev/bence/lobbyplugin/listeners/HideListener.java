@@ -36,37 +36,34 @@ public class HideListener implements Listener {
         grayMeta.setLore(Arrays.asList(ChatUtils.format("&7&oRechtermuisknop om spelers te laten zien!")));
 
 
-
-
-        if (item.getType().equals(Material.LIME_DYE) || item.getType().equals(Material.GRAY_DYE)) {
-            e.setCancelled(true);
-            if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || e.getAction().equals(Action.RIGHT_CLICK_AIR)) {
-
-                for (Player players : Bukkit.getOnlinePlayers()) {
-                    if (main.hidden.contains(player)) {
-                        main.hidden.remove(player);
-                        player.showPlayer(players);
-                        player.getInventory().getItemInMainHand().setType(Material.LIME_DYE);
-                        item.setItemMeta(limeMeta);
-                        player.updateInventory();
-                        player.sendMessage(ChatUtils.format(main.getConfig().getString("prefix") + "&aSpelers zichtbaar"));
-                    }
+        e.setCancelled(true);
+        if (e.getMaterial().equals(Material.GRAY_DYE)) {
+            for (Player players : Bukkit.getOnlinePlayers()) {
+                if (main.hidden.contains(player)) {
+                    main.hidden.remove(player);
+                    player.showPlayer(players);
+                    player.getInventory().getItemInMainHand().setType(Material.LIME_DYE);
+                    item.setItemMeta(limeMeta);
+                    player.updateInventory();
+                    player.sendMessage(ChatUtils.format(main.getConfig().getString("prefix") + "&aSpelers zichtbaar"));
                 }
-            } else {
-                for (Player players : Bukkit.getOnlinePlayers()) {
-                    if (!main.hidden.contains(player)) {
-                        main.hidden.add(player);
-                        player.hidePlayer(players);
-                        player.getInventory().getItemInMainHand().setType(Material.GRAY_DYE);
-                        item.setItemMeta(grayMeta);
-                        player.updateInventory();
-                        player.sendMessage(ChatUtils.format(main.getConfig().getString("prefix") + "&cSpelers verborgen"));
-                    }
+            }
+        } else if (e.getMaterial().equals(Material.LIME_DYE)) {
+            for (Player players : Bukkit.getOnlinePlayers()) {
+                if (!main.hidden.contains(player)) {
+                    main.hidden.add(player);
+                    player.hidePlayer(players);
+                    player.getInventory().getItemInMainHand().setType(Material.GRAY_DYE);
+                    item.setItemMeta(grayMeta);
+                    player.updateInventory();
+                    player.sendMessage(ChatUtils.format(main.getConfig().getString("prefix") + "&cSpelers verborgen"));
                 }
             }
         }
     }
 }
+
+
 
 
 

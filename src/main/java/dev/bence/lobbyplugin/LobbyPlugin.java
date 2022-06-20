@@ -33,6 +33,8 @@ public final class LobbyPlugin extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new SelectorListener(), this);
         this.getServer().getPluginManager().registerEvents(new DoubleJumpListener(), this);
         this.getServer().getPluginManager().registerEvents(new ScoreboardListener(), this);
+        this.getServer().getPluginManager().registerEvents(new ParticleListener(), this);
+        this.getServer().getPluginManager().registerEvents(new ParticleClickListener(), this);
 
 
 //        CONFIG
