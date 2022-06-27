@@ -7,6 +7,7 @@ import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.*;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,6 +28,14 @@ public class JoinListener implements Listener {
 
         player.getInventory().clear();
 
+
+        if (main.getConfig().getBoolean("particle-menu")) {
+            ItemStack particleItem = new ItemBuilder(Material.CHEST)
+                    .setName(ChatUtils.format("&aParticle Menu"))
+                    .setLore(ChatUtils.format("&7Zet hier jou particles aan!"))
+                    .build();
+            player.getInventory().setItem(0, particleItem);
+        }
 
         ItemStack joinItem = new ItemStack(Material.getMaterial(main.getConfig().getString("join-item.material")), 1);
         ItemStack particleChest = new ItemBuilder(Material.CHEST)
