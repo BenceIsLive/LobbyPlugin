@@ -29,14 +29,6 @@ public class JoinListener implements Listener {
         player.getInventory().clear();
 
 
-        if (main.getConfig().getBoolean("particle-menu")) {
-            ItemStack particleItem = new ItemBuilder(Material.CHEST)
-                    .setName(ChatUtils.format("&aParticle Menu"))
-                    .setLore(ChatUtils.format("&7Zet hier jou particles aan!"))
-                    .build();
-            player.getInventory().setItem(0, particleItem);
-        }
-
         ItemStack joinItem = new ItemStack(Material.getMaterial(main.getConfig().getString("join-item.material")), 1);
         ItemStack particleChest = new ItemBuilder(Material.CHEST)
                 .setName(ChatUtils.format(main.getConfig().getString("particle-chest.name")))
@@ -49,7 +41,7 @@ public class JoinListener implements Listener {
 
         player.getInventory().setItem(4, joinItem);
         player.getInventory().setItem(8, hideItem);
-        player.getInventory().setItem(1, particleChest);
+        player.getInventory().setItem(0, particleChest);
 
 
     }

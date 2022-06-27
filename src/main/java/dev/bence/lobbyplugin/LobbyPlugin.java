@@ -4,12 +4,11 @@ import dev.bence.lobbyplugin.commands.ParticleMenuCommand;
 import dev.bence.lobbyplugin.commands.ReloadCommand;
 import dev.bence.lobbyplugin.listeners.*;
 import dev.bence.lobbyplugin.listeners.JoinUtils.JoinListener;
-import dev.bence.lobbyplugin.listeners.JoinUtils.Utils.PlayerHide;
-import dev.bence.lobbyplugin.listeners.JoinUtils.Utils.Scoreboard;
-import dev.bence.lobbyplugin.listeners.JoinUtils.Utils.SelectorMaterial;
+import dev.bence.lobbyplugin.listeners.JoinUtils.Utils.*;
 import dev.bence.lobbyplugin.managers.ParticleManager;
 import dev.bence.lobbyplugin.menu.ParticleMenu;
 import org.bukkit.Bukkit;
+import org.bukkit.block.data.type.Fire;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -65,6 +64,9 @@ public final class LobbyPlugin extends JavaPlugin {
         pluginManager.registerEvents(new SelectorMaterial(), this);
         pluginManager.registerEvents(new DoubleJumpListener(), this);
         pluginManager.registerEvents(new Scoreboard(), this);
+        pluginManager.registerEvents(new ParticleChest(this), this);
+        pluginManager.registerEvents(new Firework(), this);
+        pluginManager.registerEvents(new JoinMessage(), this);
 
     }
     private void registerCommands() {
