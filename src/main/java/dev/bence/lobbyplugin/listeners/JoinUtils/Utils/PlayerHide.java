@@ -1,4 +1,4 @@
-package dev.bence.lobbyplugin.listeners;
+package dev.bence.lobbyplugin.listeners.JoinUtils.Utils;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
 import dev.bence.lobbyplugin.utils.ChatUtils;
@@ -14,7 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
 
-public class HideListener implements Listener {
+public class PlayerHide implements Listener {
 
     LobbyPlugin main = LobbyPlugin.getPlugin(LobbyPlugin.class);
     public static LobbyPlugin instance;
@@ -67,9 +67,3 @@ public class HideListener implements Listener {
         }
     }
 }
-
-
-
-
-
-

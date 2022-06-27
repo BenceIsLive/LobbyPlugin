@@ -1,21 +1,21 @@
-package dev.bence.lobbyplugin.listeners;
+package dev.bence.lobbyplugin.listeners.JoinUtils.Utils;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
 import dev.bence.lobbyplugin.utils.ChatUtils;
 import me.clip.placeholderapi.PlaceholderAPI;
-import me.clip.placeholderapi.libs.kyori.adventure.platform.facet.Facet;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.scoreboard.*;
+import org.bukkit.scoreboard.DisplaySlot;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Team;
 
-import java.awt.*;
 import java.util.List;
 
-public class ScoreboardListener implements Listener {
+public class Scoreboard implements Listener {
 
     LobbyPlugin main = LobbyPlugin.getPlugin(LobbyPlugin.class);
 
@@ -25,7 +25,7 @@ public class ScoreboardListener implements Listener {
         Player player = e.getPlayer();
 
         String title = (PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getConfig().getString("scoreboard.title"))));
-        Scoreboard board =  Bukkit.getScoreboardManager().getNewScoreboard();
+        org.bukkit.scoreboard.Scoreboard board =  Bukkit.getScoreboardManager().getNewScoreboard();
 
         Objective obj = board.registerNewObjective("dummy", "title");
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
@@ -45,3 +45,4 @@ public class ScoreboardListener implements Listener {
 
     }
 }
+

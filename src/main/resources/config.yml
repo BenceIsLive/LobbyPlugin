@@ -12,6 +12,10 @@ leave-message: "&c- &7%player%"
 join-item:
   material: 'COMPASS'
   amount: '1'
+particle-chest:
+  name: "&aCosmetics Menu"
+  lore:
+    - "&7Rechter-klik om het menu te openen! "
 
 # GUI Menu server selector
 
