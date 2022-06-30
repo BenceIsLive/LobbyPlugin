@@ -6,8 +6,8 @@ prefix: "&#1dfb83&lM&#24fb8e&lA&#2bfc99&lZ&#32fca3&lE&#39fdae&lM&#40fdb9&lC &8&l
 zichtbaarheid-aan: "&7Zichtbaarheid: &aAAN"
 zichtbaarheid-uit: "&7Zichtbaarheid: &cUIT"
 
-zichtbaarheid-aan-message: "&7Alle spelers zijn weer zichtbaar."
-zichtbaarheid-uit-messagge: "&7Alle spelers zijn niet meer zichtbaar."
+zichtbaarheid-aan-message: "&aAlle spelers zijn weer zichtbaar."
+zichtbaarheid-uit-message: "&cAlle spelers zijn niet meer zichtbaar."
 
 join-message: "&a+ &7%player_name%"
 leave-message: "&c- &7%player_name%"

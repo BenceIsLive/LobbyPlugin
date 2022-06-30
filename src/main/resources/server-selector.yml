@@ -1,8 +1,13 @@
 # Server selector GUI
 
-selector-item: 'COMPASS'
+selector:
+  item: 'COMPASS'
+  name: "&aServer Selector"
+  amount: 1
+  lore:
+    - "&7Kijk hier naar wat voor servers wij hebben!"
 
-server-selector-title: "          &a&lServer Selector"
+server-selector-title: "          &aServer Selector"
 
 server-selector:
   1:
@@ -20,4 +25,4 @@ server-selector:
       - '&f- &7Spelers: &a%bungee_survival%'
       - ''
       - '&a&l➜ &aKlik om te verbinden!'
-    action: "server_survival"
+    action: "[SURVIVAL]"

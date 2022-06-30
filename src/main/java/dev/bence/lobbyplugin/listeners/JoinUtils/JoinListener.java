@@ -30,7 +30,11 @@ public class JoinListener implements Listener {
 
         String joinMessage = PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getDataFile().getString("join-message")));
 
-        ItemStack joinItem = new ItemStack(Material.getMaterial(main.getSelectorFile().getString("selector-item")), 1);
+        ItemStack joinItem = new ItemBuilder(Material.getMaterial(main.getSelectorFile().getString("selector.item")))
+                .setName(ChatUtils.format(main.getSelectorFile().getString("selector.name")))
+                .setLore(ChatUtils.format(main.getSelectorFile().getStringList("selector.lore")))
+                .setAmount(main.getSelectorFile().getInt("selector.amount"))
+                .build();
         ItemStack particleChest = new ItemBuilder(Material.CHEST)
                 .setName(ChatUtils.format(main.getConfig().getString("particle-chest.name")))
                 .setLore(ChatUtils.format(main.getConfig().getStringList("particle-chest.lore")))

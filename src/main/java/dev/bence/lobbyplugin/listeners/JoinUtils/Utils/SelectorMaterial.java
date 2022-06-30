@@ -18,7 +18,7 @@ public class SelectorMaterial implements Listener {
         Player player = e.getPlayer();
 
         if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getItem() != null) {
-            if (e.getItem().getType().equals(Material.getMaterial(main.getSelectorFile().getString("selector-item")))) {
+            if (e.getItem().getType().equals(Material.getMaterial(main.getSelectorFile().getString("selector.item")))) {
 
                 new SelectorMenu(player);
             }

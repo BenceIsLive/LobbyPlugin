@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.persistence.PersistentDataType;
 
-public class InventoryClickListener implements Listener {
+public class SelectorClickListener implements Listener {
 
     LobbyPlugin main = LobbyPlugin.getInstance();
 
@@ -27,10 +27,10 @@ public class InventoryClickListener implements Listener {
 
                 String persistentData = e.getCurrentItem().getItemMeta().getPersistentDataContainer().get(new NamespacedKey(main, "action"), PersistentDataType.STRING);
                 switch (persistentData) {
-                    case "server_survival":
+                    case "[SURVIVAL]":
                         player.performCommand("server survival");
                         player.sendMessage(ChatUtils.format("&aU wordt verzonden naar de Survival"));
-                    case "server_lobby":
+                    case "[LOBBY]":
                         player.performCommand("server lobby");
                 }
             }

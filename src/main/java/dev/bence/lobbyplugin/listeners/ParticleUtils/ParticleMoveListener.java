@@ -1,4 +1,4 @@
-package dev.bence.lobbyplugin.listeners;
+package dev.bence.lobbyplugin.listeners.ParticleUtils;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
 import dev.bence.lobbyplugin.enums.LobbyParticles;
