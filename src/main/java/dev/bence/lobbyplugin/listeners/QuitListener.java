@@ -17,8 +17,7 @@ public class QuitListener implements Listener {
 
         Player player = e.getPlayer();
 
-        String leaveMessageOld = PlaceholderAPI.setPlaceholders(player,ChatUtils.format(main.getConfig().getString("leave-message")));
-        String leaveMessage = leaveMessageOld.replaceAll("%player%", player.getDisplayName());
+        String leaveMessage = PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getDataFile().getString("leave-message")));
 
         e.setQuitMessage(leaveMessage);
     }

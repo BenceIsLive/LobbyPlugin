@@ -7,6 +7,7 @@ import dev.bence.lobbyplugin.listeners.JoinUtils.JoinListener;
 import dev.bence.lobbyplugin.listeners.JoinUtils.Utils.*;
 import dev.bence.lobbyplugin.managers.ParticleManager;
 import dev.bence.lobbyplugin.menu.ParticleMenu;
+import dev.bence.lobbyplugin.utils.DataFile;
 import org.bukkit.Bukkit;
 import org.bukkit.block.data.type.Fire;
 import org.bukkit.entity.Player;
@@ -17,6 +18,8 @@ import java.util.ArrayList;
 
 public final class LobbyPlugin extends JavaPlugin {
 
+    private DataFile dataFile;
+    private DataFile selectorFile;
     private static LobbyPlugin instance;
     public static ArrayList<Player> hidden = new ArrayList<Player>();
     private final ParticleManager particleManager;
@@ -37,9 +40,17 @@ public final class LobbyPlugin extends JavaPlugin {
         registerEvents();
 
         saveDefaultConfig();
+        saveResource("messages.yml", false);
+        saveResource("server-selector.yml", false);
 
+        dataFile = new DataFile("messages.yml", getDataFolder());
+        selectorFile = new DataFile("server-selector.yml", getDataFolder());
 
     }
+    public DataFile getDataFile() {
+        return dataFile;
+    }
+    public DataFile getSelectorFile() { return selectorFile; }
 
     public ParticleManager getParticleManager() {
         return this.particleManager;
@@ -66,7 +77,6 @@ public final class LobbyPlugin extends JavaPlugin {
         pluginManager.registerEvents(new Scoreboard(), this);
         pluginManager.registerEvents(new ParticleChest(this), this);
         pluginManager.registerEvents(new Firework(), this);
-        pluginManager.registerEvents(new JoinMessage(), this);
 
     }
     private void registerCommands() {

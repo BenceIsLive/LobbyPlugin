@@ -1,20 +1,11 @@
 # LobbyPlugin made by 7Bence
 
-prefix: "&#1dfb83&lM&#24fb8e&lA&#2bfc99&lZ&#32fca3&lE&#39fdae&lM&#40fdb9&lC &8&l| &7"
-
-# Join/Leave Message
-
-join-message: "&a+ &7%player%"
-leave-message: "&c- &7%player%"
-
 # Join item
 
 particle-menu: true
 particle-menu-title: "&aParticle Menu"
 
-join-item:
-  material: 'COMPASS'
-  amount: '1'
+
 particle-chest:
   name: "&aCosmetics Menu"
   lore:
@@ -45,7 +36,7 @@ server-selector:
 
 # Double jump true/false
 
-double-jump: false
+double-jump: true
 
 # Scoreboard
 

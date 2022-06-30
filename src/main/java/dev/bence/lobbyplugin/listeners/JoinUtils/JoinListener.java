@@ -28,17 +28,19 @@ public class JoinListener implements Listener {
 
         player.getInventory().clear();
 
+        String joinMessage = PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getDataFile().getString("join-message")));
 
-        ItemStack joinItem = new ItemStack(Material.getMaterial(main.getConfig().getString("join-item.material")), 1);
+        ItemStack joinItem = new ItemStack(Material.getMaterial(main.getSelectorFile().getString("selector-item")), 1);
         ItemStack particleChest = new ItemBuilder(Material.CHEST)
                 .setName(ChatUtils.format(main.getConfig().getString("particle-chest.name")))
                 .setLore(ChatUtils.format(main.getConfig().getStringList("particle-chest.lore")))
                 .build();
         ItemStack hideItem = new ItemBuilder(Material.LIME_DYE)
-            .setName(ChatUtils.format("&cSpelers verbergen"))
-            .setLore(ChatUtils.format("&7&oLinkermuisknop om spelers te verbergen!"))
+            .setName(ChatUtils.format(main.getDataFile().getString("zichtbaarheid-aan")))
             .build();
 
+
+        e.setJoinMessage(joinMessage);
         player.getInventory().setItem(4, joinItem);
         player.getInventory().setItem(8, hideItem);
         player.getInventory().setItem(0, particleChest);

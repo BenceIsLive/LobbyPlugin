@@ -19,8 +19,8 @@ public class SelectorMenu {
 
         Inventory inv = Bukkit.createInventory(player, 27, ChatUtils.format(main.getConfig().getString("server-selector-title")));
 
-        for (String key : main.getConfig().getConfigurationSection("server-selector.").getKeys(false)) {
-            ConfigurationSection keySection = main.getConfig().getConfigurationSection("server-selector.").getConfigurationSection(key);
+        for (String key : main.getSelectorFile().getConfigurationSection("server-selector.").getKeys(false)) {
+            ConfigurationSection keySection = main.getSelectorFile().getConfigurationSection("server-selector.").getConfigurationSection(key);
             int slot = keySection.getInt("slot");
             ItemStack item = new ItemBuilder(Material.getMaterial(keySection.getString("item")))
                     .setName(ChatUtils.format(keySection.getString("name")))

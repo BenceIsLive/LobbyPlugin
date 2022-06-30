@@ -1,0 +1,23 @@
+# Server selector GUI
+
+selector-item: 'COMPASS'
+
+server-selector-title: "          &a&lServer Selector"
+
+server-selector:
+  1:
+    name: "&#1dfb83&lSurvival"
+    item: 'GRASS_BLOCK'
+    glow: true
+    slot: 10
+    lore:
+      - ''
+      - '&f- &7Gegarandeerd geen lagg'
+      - '&f- &7Volledig 1.18.x'
+      - '&f- &7Vriendelijke spelers!'
+      - '&f- &7Elke week meerdere events!'
+      - ''
+      - '&f- &7Spelers: &a%bungee_survival%'
+      - ''
+      - '&a&l➜ &aKlik om te verbinden!'
+    action: "server_survival"

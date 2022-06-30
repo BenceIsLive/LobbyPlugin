@@ -21,7 +21,7 @@ public class InventoryClickListener implements Listener {
 
                 e.setCancelled(true);
 
-            if (e.getView().getTitle().equalsIgnoreCase(ChatUtils.format(main.getConfig().getString("server-selector-title")))) {
+            if (e.getView().getTitle().equalsIgnoreCase(ChatUtils.format(main.getSelectorFile().getString("server-selector-title")))) {
                 e.setCancelled(true);
 
 

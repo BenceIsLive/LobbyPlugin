@@ -12,8 +12,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.Arrays;
-
 public class PlayerHide implements Listener {
 
     LobbyPlugin main = LobbyPlugin.getPlugin(LobbyPlugin.class);
@@ -27,13 +25,11 @@ public class PlayerHide implements Listener {
 
         ItemStack lime = new ItemStack(Material.LIME_DYE);
         ItemMeta limeMeta = lime.getItemMeta();
-        limeMeta.setDisplayName(ChatUtils.format("&cSpelers verbergen"));
-        limeMeta.setLore(Arrays.asList(ChatUtils.format("&7&oLinkermuisknop om spelers te verbergen!")));
+        limeMeta.setDisplayName(ChatUtils.format(main.getDataFile().getString("zichtbaarheid-aan")));
 
         ItemStack gray = new ItemStack(Material.GRAY_DYE);
         ItemMeta grayMeta = gray.getItemMeta();
-        grayMeta.setDisplayName(ChatUtils.format("&cSpelers zichtbaar maken"));
-        grayMeta.setLore(Arrays.asList(ChatUtils.format("&7&oRechtermuisknop om spelers te laten zien!")));
+        grayMeta.setDisplayName(ChatUtils.format(main.getDataFile().getString("zichtbaarheid-uit")));
 
 
 
@@ -49,7 +45,7 @@ public class PlayerHide implements Listener {
                         player.getInventory().getItemInMainHand().setType(Material.LIME_DYE);
                         item.setItemMeta(limeMeta);
                         player.updateInventory();
-                        player.sendMessage(ChatUtils.format(main.getConfig().getString("prefix") + "&aSpelers zichtbaar"));
+                        player.sendMessage(ChatUtils.format(main.getDataFile().getString("prefix") + main.getDataFile().getString("zichtbaarheid-aan-message")));
                     }
                 }
             } else {
@@ -60,7 +56,7 @@ public class PlayerHide implements Listener {
                         player.getInventory().getItemInMainHand().setType(Material.GRAY_DYE);
                         item.setItemMeta(grayMeta);
                         player.updateInventory();
-                        player.sendMessage(ChatUtils.format(main.getConfig().getString("prefix") + "&cSpelers verborgen"));
+                        player.sendMessage(ChatUtils.format(main.getDataFile().getString("prefix") + main.getDataFile().getString("zichtbaarheid-uit-message")));
                     }
                 }
             }
