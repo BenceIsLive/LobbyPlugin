@@ -11,29 +11,6 @@ particle-chest:
   lore:
     - "&7Rechter-klik om het menu te openen! "
 
-# GUI Menu server selector
-
-server-selector-title: "          &a&lServer Selector"
-
-server-selector:
-  1:
-    name: "&#1dfb83&lSurvival"
-    item: 'GRASS_BLOCK'
-    glow: true
-    slot: 10
-    lore:
-      - ''
-      - '&f- &7Gegarandeerd geen lagg'
-      - '&f- &7Volledig 1.18.x'
-      - '&f- &7Vriendelijke spelers!'
-      - '&f- &7Elke week meerdere events!'
-      - ''
-      - '&f- &7Spelers: &a%bungee_survival%'
-      - ''
-      - '&a&l➜ &aKlik om te verbinden!'
-    action: "server_survival"
-
-
 # Double jump true/false
 
 double-jump: true
@@ -55,3 +32,14 @@ scoreboard:
     - ' &fSurvival: &a%bungee_season3%'
     - '&r'
     - '&7play.trophicmc.nl'
+
+tab-visible: false
+tab:
+  header:
+  - ""
+  - "&8&L-------------"
+  - ""
+  footer:
+  - ""
+  - "&8&L-------------"
+  - ""

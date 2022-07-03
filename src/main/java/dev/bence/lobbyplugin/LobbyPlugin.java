@@ -79,6 +79,7 @@ public final class LobbyPlugin extends JavaPlugin {
         pluginManager.registerEvents(new ParticleChest(this), this);
         pluginManager.registerEvents(new Firework(), this);
         pluginManager.registerEvents(new StopRainListener(), this);
+        pluginManager.registerEvents(new Tab(), this);
 
     }
     private void registerCommands() {
