@@ -1,7 +1,8 @@
 # Server selector GUI
 
+selector-item: 'COMPASS'
+
 selector:
-  item: 'COMPASS'
   name: "&aServer Selector"
   amount: 1
   lore:

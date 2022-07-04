@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 
 public class SelectorMaterial implements Listener {
 
@@ -17,8 +18,9 @@ public class SelectorMaterial implements Listener {
     public void onPlayerInteract(PlayerInteractEvent e) {
         Player player = e.getPlayer();
 
-        if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getItem() != null) {
-            if (e.getItem().getType().equals(Material.getMaterial(main.getSelectorFile().getString("selector.item")))) {
+        if (e.getHand().equals(EquipmentSlot.HAND)) {
+            if (e.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.getMaterial(main.getSelectorFile().getString("selector-item")))) {
+//            if (e.getItem().getType().equals(Material.getMaterial(main.getSelectorFile().getString("selector-item")))) {
 
                 new SelectorMenu(player);
             }
