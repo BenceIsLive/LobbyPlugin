@@ -21,7 +21,7 @@ public final class LobbyPlugin extends JavaPlugin {
 
     private DataFile dataFile;
     private DataFile selectorFile;
-    private static LobbyPlugin instance;
+    public static LobbyPlugin instance;
     public static ArrayList<Player> hidden = new ArrayList<Player>();
     private final ParticleManager particleManager;
     private final ParticleMenu particleMenu;
