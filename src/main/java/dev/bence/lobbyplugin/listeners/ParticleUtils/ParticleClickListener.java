@@ -1,37 +1,60 @@
 package dev.bence.lobbyplugin.listeners.ParticleUtils;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
+import dev.bence.lobbyplugin.enums.LobbyParticles;
+import dev.bence.lobbyplugin.listeners.ParticleUtils.Types.Types;
+import dev.bence.lobbyplugin.managers.ParticleManager;
 import dev.bence.lobbyplugin.utils.ChatUtils;
 import org.bukkit.Material;
 import org.bukkit.Particle;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
+import java.util.HashMap;
+import java.util.Objects;
+import java.util.UUID;
+
 public class ParticleClickListener implements Listener {
 
     LobbyPlugin main = LobbyPlugin.getInstance();
-
+    public static HashMap<UUID, Particle> playerParticle = new HashMap<>();
+    public Types types;
     @EventHandler
     public void onParticleClick(InventoryClickEvent e) {
-
         Player player = (Player) e.getWhoClicked();
-
-        if(e.getView().getTitle().equalsIgnoreCase(ChatUtils.format(main.getConfig().getString("particle-menu-title"))) && e.getCurrentItem() != null) {
+        // ckeck name title
+        if (e.getView().getTitle().equalsIgnoreCase(ChatUtils.format(main.getParticleFile().getString("particle-menu-title"))) && e.getCurrentItem() != null) {
             e.setCancelled(true);
-            switch (e.getRawSlot()) {
-                case 10: // kit
-                    player.spawnParticle(Particle.BUBBLE_POP, player.getLocation(), 10);
-                    player.sendMessage("Je hebt nu een drip lava particle");
-                    break;
-                default:
-                    return;
+            // remove/replace/add player to hashmap
+            for (String key : main.getParticleFile().getConfigurationSection("particle-menu.").getKeys(false)) {
+                ConfigurationSection keySection = main.getParticleFile().getConfigurationSection("particle-menu.").getConfigurationSection(key);
+                int slot = keySection.getInt("slot");
+                checkSlotStatus(e.getRawSlot(), slot, keySection, player);
+//                if( keySection.getString("type") != null){
+//                    types.applyType(player, keySection.getString("type"));
+//                }
+
             }
             player.closeInventory();
+        }
+    }
+
+    public void checkSlotStatus(int slotNumber1, int slotNumber2, ConfigurationSection keySection, Player player){
+        if (slotNumber1 == slotNumber2) {
+            String particle_name = keySection.getString("particle");
+            Particle particle = Particle.valueOf(particle_name);
+            if (!(playerParticle.containsKey(player.getUniqueId()))) {
+                playerParticle.put(player.getUniqueId(), particle);
+            } else if (playerParticle.get(player.getUniqueId()) == particle) {
+                playerParticle.remove(player.getUniqueId());
+            } else {
+                playerParticle.replace(player.getUniqueId(), particle);
+            }
+
 
         }
-
-
-        }
+    }
 }

@@ -10,3 +10,5 @@ commands:
     description: Reloads the config
   particle:
     description: open menu particle
+  cosmetic:
+    description: opensmenu

@@ -1,0 +1,22 @@
+# Particle Menu
+
+particle-menu-title: "test"
+
+particle-menu:
+  1:
+    name: "&#1dfb83&lLava-Drip"
+    item: 'WATER_BUCKET'
+    slot: 10
+    lore:
+      - ''
+    particle: "DRIP_LAVA"
+    type: "CIRCLE"
+  2:
+    name: "&#1dfb83&lLava-Drip"
+    item: 'LAVA_BUCKET'
+    slot: 9
+    lore:
+      - ''
+    particle: "DRIP_WATER"
+    type: "CIRCLE"
+
