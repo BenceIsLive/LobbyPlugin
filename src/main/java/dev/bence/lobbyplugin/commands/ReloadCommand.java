@@ -18,7 +18,8 @@ public class ReloadCommand implements CommandExecutor {
             Player player = (Player) sender;
             main.reloadConfig();
             main.getDataFile().load();
-            player.sendMessage(ChatUtils.format("&aConfig herladen!"));
+            main.getSelectorFile().load();
+            player.sendMessage(ChatUtils.format("&aBestanden herladen!"));
 
         }
         return false;
