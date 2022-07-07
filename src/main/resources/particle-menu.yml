@@ -11,23 +11,14 @@ particle-chest:
   lore:
     - "&7Rechter-klik om het menu te openen! "
 
-particle-menu-title: "test"
+particle-menu-title: "&aCosmetic Menu"
 
 particle-menu:
   1:
-    name: "&#1dfb83&lLava-Drip"
-    item: 'WATER_BUCKET'
+    name: "&cLava-Drip"
+    item: 'LAVA_BUCKET'
     slot: 10
     lore:
-      - ''
+      - '&7Klik hier om de Lava Drip Particle te krijgen.'
     particle: "DRIP_LAVA"
-    type: "Circle"
-  2:
-    name: "&#1dfb83&lLava-Drip"
-    item: 'LAVA_BUCKET'
-    slot: 9
-    lore:
-      - ''
-    particle: "DRIPPING_HONEY"
-    type: "Circle"
 
