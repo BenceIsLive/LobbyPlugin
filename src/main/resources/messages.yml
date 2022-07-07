@@ -1,4 +1,10 @@
-# DeluxeLobby Messages File
+#--------------------------------------------------------#
+#    ____       __                __      __    __   /_/
+#   / __ \___  / /_  ___  _____  / /_____/ /   / /   __
+#  / / / / _ \/ / / / / |/_/ _ \/ / ___ / /___/ /___/ /
+# / /_/ /  __/ / /_/ />  </  __/ / /__//     /     / /
+#/_____/\___/_/\__,_/_/|_|\___/_/_____/____ /____ /_/
+#--------------------------------------------------------#
 
 prefix: "&#1dfb83&lM&#24fb8e&lA&#2bfc99&lZ&#32fca3&lE&#39fdae&lM&#40fdb9&lC &8&l| &7"
 
@@ -11,3 +17,9 @@ zichtbaarheid-uit-message: "&cAlle spelers zijn niet meer zichtbaar."
 
 join-message: "&a+ &7%player_name%"
 leave-message: "&c- &7%player_name%"
+
+particle-aan: "Je hebt %particle_name% aangezeet"
+particle-uit: "Je hebt %particle_name% uitgezet"
+
+block-break-off: "&cJe mag dit blok niet breken!"
+block-place-off: "&cJe mag deze blok niet plaatsen!"

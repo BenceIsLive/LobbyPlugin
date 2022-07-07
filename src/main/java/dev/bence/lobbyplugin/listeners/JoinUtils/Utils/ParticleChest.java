@@ -1,6 +1,7 @@
 package dev.bence.lobbyplugin.listeners.JoinUtils.Utils;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
+import dev.bence.lobbyplugin.menu.CosmeticMenu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,7 +25,8 @@ public class ParticleChest implements Listener {
         if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getItem() != null) {
             if (player.getInventory().getItemInMainHand().getType().equals(Material.CHEST) && e.getItem() != null) {
 
-                plugin.getParticleMenu().openInventory(player);
+                new CosmeticMenu(player);
+
             }
         }
     }

@@ -1,11 +1,8 @@
 package dev.bence.lobbyplugin.listeners.ParticleUtils;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
-import dev.bence.lobbyplugin.enums.LobbyParticles;
 import dev.bence.lobbyplugin.listeners.ParticleUtils.Types.Types;
-import dev.bence.lobbyplugin.managers.ParticleManager;
 import dev.bence.lobbyplugin.utils.ChatUtils;
-import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -14,7 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 import java.util.HashMap;
-import java.util.Objects;
 import java.util.UUID;
 
 public class ParticleClickListener implements Listener {
@@ -48,10 +44,14 @@ public class ParticleClickListener implements Listener {
             Particle particle = Particle.valueOf(particle_name);
             if (!(playerParticle.containsKey(player.getUniqueId()))) {
                 playerParticle.put(player.getUniqueId(), particle);
+                player.sendMessage(ChatUtils.format(main.getDataFile().getString("particle-aan").replace("%particle_name%", particle_name)));
             } else if (playerParticle.get(player.getUniqueId()) == particle) {
                 playerParticle.remove(player.getUniqueId());
+                player.sendMessage(ChatUtils.format(main.getDataFile().getString("particle-uit").replace("%particle_name%", particle_name)));
             } else {
                 playerParticle.replace(player.getUniqueId(), particle);
+                player.sendMessage(ChatUtils.format(main.getDataFile().getString("particle-uit").replace("%particle_name%", particle_name)));
+                player.sendMessage(ChatUtils.format(main.getDataFile().getString("particle-aan").replace("%particle_name%", particle_name)));
             }
 
 

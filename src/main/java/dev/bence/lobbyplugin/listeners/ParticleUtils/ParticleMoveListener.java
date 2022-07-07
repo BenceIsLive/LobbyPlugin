@@ -1,8 +1,6 @@
 package dev.bence.lobbyplugin.listeners.ParticleUtils;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
-import dev.bence.lobbyplugin.enums.LobbyParticles;
-import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

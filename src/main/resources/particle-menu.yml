@@ -1,4 +1,15 @@
-# Particle Menu
+#--------------------------------------------------------#
+#    ____       __                __      __    __   /_/
+#   / __ \___  / /_  ___  _____  / /_____/ /   / /   __
+#  / / / / _ \/ / / / / |/_/ _ \/ / ___ / /___/ /___/ /
+# / /_/ /  __/ / /_/ />  </  __/ / /__//     /     / /
+#/_____/\___/_/\__,_/_/|_|\___/_/_____/____ /____ /_/
+#--------------------------------------------------------#
+
+particle-chest:
+  name: "&aCosmetics Menu"
+  lore:
+    - "&7Rechter-klik om het menu te openen! "
 
 particle-menu-title: "test"
 
@@ -10,13 +21,13 @@ particle-menu:
     lore:
       - ''
     particle: "DRIP_LAVA"
-    type: "CIRCLE"
+    type: "Circle"
   2:
     name: "&#1dfb83&lLava-Drip"
     item: 'LAVA_BUCKET'
     slot: 9
     lore:
       - ''
-    particle: "DRIP_WATER"
-    type: "CIRCLE"
+    particle: "DRIPPING_HONEY"
+    type: "Circle"
 

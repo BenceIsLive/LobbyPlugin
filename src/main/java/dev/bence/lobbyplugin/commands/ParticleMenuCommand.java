@@ -1,6 +1,7 @@
 package dev.bence.lobbyplugin.commands;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
+import dev.bence.lobbyplugin.menu.CosmeticMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,7 +20,7 @@ public class ParticleMenuCommand implements CommandExecutor {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
 
-        plugin.getParticleMenu().openInventory(player);
+        new CosmeticMenu(player);
         return true;
 
     }

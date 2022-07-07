@@ -4,6 +4,8 @@ import dev.bence.lobbyplugin.commands.CosmeticCommand;
 import dev.bence.lobbyplugin.commands.ParticleMenuCommand;
 import dev.bence.lobbyplugin.commands.ReloadCommand;
 import dev.bence.lobbyplugin.listeners.*;
+import dev.bence.lobbyplugin.listeners.Flags.BlockBreakListener;
+import dev.bence.lobbyplugin.listeners.Flags.BlockPlaceListener;
 import dev.bence.lobbyplugin.listeners.JoinUtils.JoinListener;
 import dev.bence.lobbyplugin.listeners.JoinUtils.Utils.*;
 import dev.bence.lobbyplugin.listeners.ParticleUtils.ParticleClickListener;
@@ -32,7 +34,7 @@ public final class LobbyPlugin extends JavaPlugin {
 
         saveDefaultConfig();
         saveResource("particle-menu.yml", false);
-        saveResource("messages.yml", false);
+        saveResource("messages.yml", true);
         saveResource("server-selector.yml", false);
 
         dataFile = new DataFile("messages.yml", getDataFolder());
@@ -66,6 +68,8 @@ public final class LobbyPlugin extends JavaPlugin {
         pluginManager.registerEvents(new StopRainListener(), this);
         pluginManager.registerEvents(new Tab(), this);
         pluginManager.registerEvents(new ParticleClickListener(), this);
+        pluginManager.registerEvents(new BlockBreakListener(), this);
+        pluginManager.registerEvents(new BlockPlaceListener(), this);
 
     }
     private void registerCommands() {

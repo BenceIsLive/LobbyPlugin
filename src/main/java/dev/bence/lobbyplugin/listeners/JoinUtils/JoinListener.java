@@ -30,26 +30,35 @@ public class JoinListener implements Listener {
 
         String joinMessage = PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getDataFile().getString("join-message")));
 
-        ItemStack joinItem = new ItemBuilder(Material.getMaterial(main.getSelectorFile().getString("selector-item")))
-                .setName(ChatUtils.format(main.getSelectorFile().getString("selector.name")))
-                .setLore(ChatUtils.format(main.getSelectorFile().getStringList("selector.lore")))
-                .setAmount(main.getSelectorFile().getInt("selector.amount"))
-                .build();
-        ItemStack particleChest = new ItemBuilder(Material.CHEST)
-                .setName(ChatUtils.format(main.getConfig().getString("particle-chest.name")))
-                .setLore(ChatUtils.format(main.getConfig().getStringList("particle-chest.lore")))
-                .build();
-        ItemStack hideItem = new ItemBuilder(Material.LIME_DYE)
-            .setName(ChatUtils.format(main.getDataFile().getString("zichtbaarheid-aan")))
-            .build();
+
+        if (main.getConfig().getBoolean("selector-item.enabled")) {
+            ItemStack joinItem = new ItemBuilder(Material.getMaterial(main.getSelectorFile().getString("selector-item")))
+                    .setName(ChatUtils.format(main.getSelectorFile().getString("selector.name")))
+                    .setLore(ChatUtils.format(main.getSelectorFile().getStringList("selector.lore")))
+                    .setAmount(main.getSelectorFile().getInt("selector.amount"))
+                    .build();
+            player.getInventory().setItem(main.getConfig().getInt("selector-item.slot"), joinItem);
+        }
+
+            if (main.getConfig().getBoolean("particle-menu.enabled")) {
+                ItemStack particleChest = new ItemBuilder(Material.CHEST)
+                        .setName(ChatUtils.format(main.getParticleFile().getString("particle-chest.name")))
+                        .setLore(ChatUtils.format(main.getParticleFile().getStringList("particle-chest.lore")))
+                        .build();
+                player.getInventory().setItem(main.getConfig().getInt("particle-menu.slot"), particleChest);
+            }
+
+                ItemStack hideItem = new ItemBuilder(Material.LIME_DYE)
+                        .setName(ChatUtils.format(main.getDataFile().getString("zichtbaarheid-aan")))
+                        .build();
 
 
-        e.setJoinMessage(joinMessage);
-        player.getInventory().setItem(4, joinItem);
-        player.getInventory().setItem(8, hideItem);
-        player.getInventory().setItem(0, particleChest);
+                e.setJoinMessage(joinMessage);
+                player.getInventory().setItem(8, hideItem);
 
 
-    }
-}
+            }
+        }
+
+
 

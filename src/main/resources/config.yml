@@ -1,21 +1,46 @@
-# LobbyPlugin made by 7Bence
+#--------------------------------------------------------#
+#    ____       __                __      __    __   /_/
+#   / __ \___  / /_  ___  _____  / /_____/ /   / /   __
+#  / / / / _ \/ / / / / |/_/ _ \/ / ___ / /___/ /___/ /
+# / /_/ /  __/ / /_/ />  </  __/ / /__//     /     / /
+#/_____/\___/_/\__,_/_/|_|\___/_/_____/____ /____ /_/
+#--------------------------------------------------------#
 
-# Join item
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | GENERAL SETTINGS                         |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-particle-menu: true
-particle-menu-title: "&aParticle Menu"
+# Check for latest SpigotMC updates (recommended).
+check-updates: true
 
-
-particle-chest:
-  name: "&aCosmetics Menu"
-  lore:
-    - "&7Rechter-klik om het menu te openen! "
-
-# Double jump true/false
-
+# Double jump true/false.
 double-jump: true
 
-# Scoreboard
+# Particle Menu.
+particle-menu:
+  enabled: true
+  slot: 0
+
+# Server Selector Menu.
+selector-item:
+  enabled: true
+  slot: 4
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | WORLD EVENT SETTINGS                     |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+# Players cant break blocks.
+block-break: false
+block-place: false
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | SCOREBOARD                               |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+scoreboard-visible:
+  # Should the scoreboard feature be enabled?
+  enabled: true
 
 scoreboard:
   title: '&#1dfb83&lM&#24fb8e&lA&#2bfc99&lZ&#32fca3&lE&#39fdae&lM&#40fdb9&lC'
@@ -33,7 +58,12 @@ scoreboard:
     - '&r'
     - '&7play.trophicmc.nl'
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# |TABLIST                                   |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
 tab-visible: false
+
 tab:
   header:
   - ""

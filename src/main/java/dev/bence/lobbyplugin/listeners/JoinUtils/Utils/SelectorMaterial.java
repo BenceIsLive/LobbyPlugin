@@ -20,7 +20,6 @@ public class SelectorMaterial implements Listener {
 
         if (e.getHand().equals(EquipmentSlot.HAND)) {
             if (e.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.getMaterial(main.getSelectorFile().getString("selector-item")))) {
-//            if (e.getItem().getType().equals(Material.getMaterial(main.getSelectorFile().getString("selector-item")))) {
 
                 new SelectorMenu(player);
             }

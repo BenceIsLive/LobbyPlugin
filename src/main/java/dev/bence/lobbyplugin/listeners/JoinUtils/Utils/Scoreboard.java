@@ -24,25 +24,27 @@ public class Scoreboard implements Listener {
 
         Player player = e.getPlayer();
 
-        String title = (PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getConfig().getString("scoreboard.title"))));
-        org.bukkit.scoreboard.Scoreboard board =  Bukkit.getScoreboardManager().getNewScoreboard();
+        if (main.getConfig().getBoolean("scoreboard-visible.enabled")) {
+            String title = (PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getConfig().getString("scoreboard.title"))));
+            org.bukkit.scoreboard.Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
 
-        Objective obj = board.registerNewObjective("dummy", "title");
-        obj.setDisplaySlot(DisplaySlot.SIDEBAR);
-        obj.setDisplayName(title);
+            Objective obj = board.registerNewObjective("dummy", "title");
+            obj.setDisplaySlot(DisplaySlot.SIDEBAR);
+            obj.setDisplayName(title);
 
-        List<String> lines = (PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getConfig().getStringList("scoreboard.lines"))));
-        int size = lines.size()+1;
-        for (String linestring : lines) {
-            size--;
-            Team line = board.registerNewTeam("line"+size);
-            line.addEntry(ChatColor.translateAlternateColorCodes('&', linestring));
-            obj.getScore(ChatColor.translateAlternateColorCodes('&', linestring)).setScore(size);
+            List<String> lines = (PlaceholderAPI.setPlaceholders(player, ChatUtils.format(main.getConfig().getStringList("scoreboard.lines"))));
+            int size = lines.size() + 1;
+            for (String linestring : lines) {
+                size--;
+                Team line = board.registerNewTeam("line" + size);
+                line.addEntry(ChatColor.translateAlternateColorCodes('&', linestring));
+                obj.getScore(ChatColor.translateAlternateColorCodes('&', linestring)).setScore(size);
+            }
+
+            player.setScoreboard(board);
+
+
         }
-
-        player.setScoreboard(board);
-
-
     }
 }
 
