@@ -1,7 +1,7 @@
 name: LobbyPlugin
 version: '${project.version}'
 main: dev.bence.lobbyplugin.LobbyPlugin
-api-version: 1.18
+api-version: 1.19
 
 depend: [PlaceholderAPI]
 

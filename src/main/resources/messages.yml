@@ -8,6 +8,7 @@
 
 prefix: "&#1dfb83&lM&#24fb8e&lA&#2bfc99&lZ&#32fca3&lE&#39fdae&lM&#40fdb9&lC &8&l| &7"
 
+no-permission-particle: "&cJe hebt geen toegang tot deze particle!"
 
 zichtbaarheid-aan: "&7Zichtbaarheid: &aAAN"
 zichtbaarheid-uit: "&7Zichtbaarheid: &cUIT"
@@ -18,8 +19,8 @@ zichtbaarheid-uit-message: "&cAlle spelers zijn niet meer zichtbaar."
 join-message: "&a+ &7%player_name%"
 leave-message: "&c- &7%player_name%"
 
-particle-aan: "Je hebt %particle_name% aangezeet"
-particle-uit: "Je hebt %particle_name% uitgezet"
+particle-aan: "&aJe hebt &f%particle_name% &aaangezet"
+particle-uit: "&cJe hebt &f%particle_name% &cuitgezet"
 
 block-break-off: "&cJe mag dit blok niet breken!"
 block-place-off: "&cJe mag deze blok niet plaatsen!"

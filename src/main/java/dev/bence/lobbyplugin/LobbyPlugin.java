@@ -69,7 +69,7 @@ public final class LobbyPlugin extends JavaPlugin {
         pluginManager.registerEvents(new Tab(), this);
         pluginManager.registerEvents(new ParticleClickListener(), this);
         pluginManager.registerEvents(new BlockBreakListener(), this);
-        pluginManager.registerEvents(new BlockPlaceListener(), this);
+        pluginManager.registerEvents(new BlockPlaceListener(), this );
 
     }
     private void registerCommands() {
