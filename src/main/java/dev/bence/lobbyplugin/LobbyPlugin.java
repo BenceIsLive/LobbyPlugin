@@ -70,7 +70,6 @@ public final class LobbyPlugin extends JavaPlugin {
         pluginManager.registerEvents(new ParticleClickListener(), this);
         pluginManager.registerEvents(new BlockBreakListener(), this);
         pluginManager.registerEvents(new BlockPlaceListener(), this );
-
     }
     private void registerCommands() {
         getCommand("reload").setExecutor(new ReloadCommand());
