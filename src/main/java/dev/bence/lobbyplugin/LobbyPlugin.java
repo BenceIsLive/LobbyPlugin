@@ -1,11 +1,9 @@
 package dev.bence.lobbyplugin;
 
 import dev.bence.lobbyplugin.commands.CosmeticCommand;
-import dev.bence.lobbyplugin.commands.ParticleMenuCommand;
 import dev.bence.lobbyplugin.commands.ReloadCommand;
 import dev.bence.lobbyplugin.listeners.*;
-import dev.bence.lobbyplugin.listeners.Flags.BlockBreakListener;
-import dev.bence.lobbyplugin.listeners.Flags.BlockPlaceListener;
+import dev.bence.lobbyplugin.listeners.Flags.*;
 import dev.bence.lobbyplugin.listeners.JoinUtils.JoinListener;
 import dev.bence.lobbyplugin.listeners.JoinUtils.Utils.*;
 import dev.bence.lobbyplugin.listeners.ParticleUtils.ParticleClickListener;
@@ -72,10 +70,13 @@ public final class LobbyPlugin extends JavaPlugin {
         pluginManager.registerEvents(new ParticleClickListener(), this);
         pluginManager.registerEvents(new BlockBreakListener(), this);
         pluginManager.registerEvents(new BlockPlaceListener(), this );
+        pluginManager.registerEvents(new InteractListener(), this);
+        pluginManager.registerEvents(new FallDamageListener(), this);
+        pluginManager.registerEvents(new VoidSpawnListener(), this);
+        pluginManager.registerEvents(new ItemPickupListener(), this);
     }
     private void registerCommands() {
         getCommand("reload").setExecutor(new ReloadCommand());
-        getCommand("particle").setExecutor(new ParticleMenuCommand(this));
         getCommand("cosmetic").setExecutor(new CosmeticCommand());
     }
 
