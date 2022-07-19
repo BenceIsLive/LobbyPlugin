@@ -1,9 +1,12 @@
 package dev.bence.lobbyplugin.listeners;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
+import dev.bence.lobbyplugin.utils.BungeeUtils;
 import dev.bence.lobbyplugin.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
+import org.bukkit.Server;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,21 +22,26 @@ public class SelectorClickListener implements Listener {
 
         Player player = (Player) e.getWhoClicked();
 
-                e.setCancelled(true);
+        e.setCancelled(true);
 
-            if (e.getView().getTitle().equalsIgnoreCase(ChatUtils.format(main.getSelectorFile().getString("server-selector-title")))) {
-                e.setCancelled(true);
+        if (e.getView().getTitle().equalsIgnoreCase(ChatUtils.format(main.getSelectorFile().getString("server-selector-title")))) {
+            e.setCancelled(true);
 
+            for (String key : main.getSelectorFile().getConfigurationSection("server-selector").getKeys(false)) {
+                ConfigurationSection keySection = main.getSelectorFile().getConfigurationSection("server-selector").getConfigurationSection(key);
+                int slot = keySection.getInt("slot");
+                checkSlotStatus(e.getRawSlot(), slot, keySection, player);
 
-                String persistentData = e.getCurrentItem().getItemMeta().getPersistentDataContainer().get(new NamespacedKey(main, "action"), PersistentDataType.STRING);
-                switch (persistentData) {
-                    case "[SURVIVAL]":
-                        player.performCommand("server survival");
-                        player.sendMessage(ChatUtils.format("&aU wordt verzonden naar de Survival"));
-                    case "[LOBBY]":
-                        player.performCommand("server lobby");
-                }
             }
+
+        }
+
+    }
+
+    public void checkSlotStatus(int slotNumber1, int slotNumber2, ConfigurationSection keySection, Player player) {
+        if (slotNumber1 == slotNumber2) {
+            BungeeUtils.connect(player, keySection.getString("server"));
         }
     }
+}
 

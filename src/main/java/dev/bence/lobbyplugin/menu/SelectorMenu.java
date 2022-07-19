@@ -25,8 +25,6 @@ public class SelectorMenu {
             ItemStack item = new ItemBuilder(Material.getMaterial(keySection.getString("item")))
                     .setName(ChatUtils.format(keySection.getString("name")))
                     .setLore(ChatUtils.format(keySection.getStringList("lore")))
-                    .setGlow(keySection.getBoolean("glow"))
-                    .setPersistentData("action", keySection.getString("action"))
                     .build();
             inv.setItem(slot, item);
 

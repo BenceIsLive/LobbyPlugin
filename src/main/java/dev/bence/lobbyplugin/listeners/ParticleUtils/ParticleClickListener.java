@@ -2,6 +2,7 @@ package dev.bence.lobbyplugin.listeners.ParticleUtils;
 
 import dev.bence.lobbyplugin.LobbyPlugin;
 import dev.bence.lobbyplugin.listeners.ParticleUtils.Types.Types;
+import dev.bence.lobbyplugin.utils.BungeeUtils;
 import dev.bence.lobbyplugin.utils.ChatUtils;
 import org.bukkit.Particle;
 import org.bukkit.configuration.ConfigurationSection;

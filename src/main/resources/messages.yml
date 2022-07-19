@@ -19,8 +19,10 @@ zichtbaarheid-uit-message: "&cAlle spelers zijn niet meer zichtbaar."
 join-message: "&a+ &7%player_name%"
 leave-message: "&c- &7%player_name%"
 
-particle-aan: "&aJe hebt &f%particle_name% &aaangezet"
-particle-uit: "&cJe hebt &f%particle_name% &cuitgezet"
+particle-aan: "&aJe hebt &6%particle_name% &aaangezet"
+particle-uit: "&cJe hebt &6%particle_name% &cuitgezet"
 
 block-break-off: "&cJe mag dit blok niet breken!"
 block-place-off: "&cJe mag deze blok niet plaatsen!"
+
+server-switch: "&7U wordt verzonden naar de "

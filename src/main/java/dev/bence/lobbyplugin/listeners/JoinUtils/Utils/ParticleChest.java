@@ -27,6 +27,7 @@ public class ParticleChest implements Listener {
 
                 new CosmeticMenu(player);
 
+
             }
         }
     }

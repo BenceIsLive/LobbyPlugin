@@ -20,7 +20,6 @@ server-selector:
   1:
     name: "&#1dfb83&lSurvival"
     item: 'GRASS_BLOCK'
-    glow: true
     slot: 10
     lore:
       - ''
@@ -32,4 +31,4 @@ server-selector:
       - '&f- &7Spelers: &a%bungee_survival%'
       - ''
       - '&a&l➜ &aKlik om te verbinden!'
-    action: "[SURVIVAL]"
+    server: "survival"

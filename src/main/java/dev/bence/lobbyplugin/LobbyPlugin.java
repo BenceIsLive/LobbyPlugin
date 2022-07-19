@@ -32,6 +32,8 @@ public final class LobbyPlugin extends JavaPlugin {
         registerCommands();
         registerEvents();
 
+        getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+
         saveDefaultConfig();
         saveResource("particle-menu.yml", false);
         saveResource("messages.yml", true);

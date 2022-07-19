@@ -17,6 +17,7 @@ public class CosmeticMenu {
 
     public CosmeticMenu(Player player) {
 
+
         Inventory inv = Bukkit.createInventory(player, 27, ChatUtils.format(main.getParticleFile().getString("particle-menu-title")));
 
         for (String key : main.getParticleFile().getConfigurationSection("particle-menu.").getKeys(false)) {
